@@ -1,12 +1,13 @@
 import "./style.css";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div>
-    <a>reset</a>
-    <img src="../public/catch.png" width="250px" />
-    <p>Hier entsteht das beste Hangman aller Zeiten!</p>
+    <a style="cursor: pointer" id="reset">🔁</a>
+    <div>
+      <img src="../public/catch.png" width="250px" />
+      <p>Hier entsteht das beste Hangman aller Zeiten!</p>
 
-    <div class="keystroke-container" />
+      <div class="keystroke-container" />
+    </div
   </div>
 `;
 
@@ -18,4 +19,8 @@ document.addEventListener('keydown', function(event){
     paragraph.innerHTML = key.toUpperCase();
     document.querySelector<HTMLDivElement>(".keystroke-container")?.appendChild(paragraph);
   }
+});
+
+document.querySelector<HTMLAnchorElement>("#reset")!.addEventListener("click", () => {
+  document.querySelector<HTMLDivElement>(".keystroke-container")!.innerHTML = "";
 });
