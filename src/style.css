@@ -82,6 +82,14 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.keystroke-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5em;
+  margin-top: 1em;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
