@@ -1,4 +1,5 @@
 import "./style.css";
+import {getWord} from "./services/word.service"
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     <a style="cursor: pointer" id="reset">🔁</a>
@@ -24,3 +25,7 @@ document.addEventListener('keydown', function(event){
 document.querySelector<HTMLAnchorElement>("#reset")!.addEventListener("click", () => {
   document.querySelector<HTMLDivElement>(".keystroke-container")!.innerHTML = "";
 });
+
+const wordElement = document.createElement('div');
+wordElement.innerHTML = "word: " + getWord(5, 10);
+document.querySelector<HTMLDivElement>("#app")?.appendChild(wordElement);

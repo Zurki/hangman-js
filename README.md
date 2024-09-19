@@ -8,4 +8,9 @@ To install this great piece of software just follow these steps:
 
 1. `npm i`
 2. `npm dev` for dev mode
-:w
+
+## TODO
+
+- [ ] SVGs für den hängen Mann erstellen.
+- [ ] Startupscreen einrichten
+- [ ] 
