@@ -9,8 +9,8 @@ import './style.css';
 import './input.css';
 
 import React from 'react';
+import { LeaderboardScreen } from './components/views/Leaderboard/Leaderboard';
 
-// Router
 const router = createBrowserRouter([
     {
         path: '/',
@@ -19,6 +19,10 @@ const router = createBrowserRouter([
     {
         path: '/game',
         element: <GameScreen />
+    },
+    {
+        path: '/leaderboard',
+        element: <LeaderboardScreen />
     }
 ]);
 
