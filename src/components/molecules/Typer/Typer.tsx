@@ -4,8 +4,13 @@ interface TyperState {
     typedText: string;
 }
 
-export class Typer extends Component<object, TyperState> {
-    constructor(props: object) {
+interface TyperProps {
+    typedText: string;
+    onTextChange: (newText: string) => void;
+}
+
+export class Typer extends Component<TyperProps, TyperState> {
+    constructor(props: TyperProps) {
         super(props);
         this.state = {
             typedText: ""
@@ -22,9 +27,8 @@ export class Typer extends Component<object, TyperState> {
 
     handleKeyDown = (event: KeyboardEvent) => {
         if (event.key.length === 1 && /[a-zA-Z]/.test(event.key)) {
-            this.setState((prevState) => ({
-                typedText: prevState.typedText + event.key
-            }));
+            const newText = event.key;
+            this.props.onTextChange(newText);
         }
     };
 
@@ -32,9 +36,9 @@ export class Typer extends Component<object, TyperState> {
         return (
             <div className="typer flex flex-col items-center justify-center p-4 bg-gray-800 rounded-lg shadow-lg" style={{ width: '50%' }}>
                 <div className="typer-output text-2xl font-bold text-white mb-4 break-words">
-                    {this.state.typedText}
+                    {this.props.typedText}
                 </div>
-                <input type="text" className="typer-input w-full p-2 text-center text-white bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" placeholder="Type your guess..." />
+                <input type="text" placeholder="Type your guess..." hidden/>
             </div>
         );
     }
