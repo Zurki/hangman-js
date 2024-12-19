@@ -47,19 +47,24 @@ export class WordDisplay extends Component<WordDisplayProps> {
 
     render() {
         return (
-            <div className="flex flex-wrap justify-center gap-3 w-full max-w-2xl">
+            <div className="flex flex-wrap justify-center gap-4">
                 {[...this.state.updatedWord].map((letter, index) => (
                     <div 
                         key={index} 
-                        className="w-12 h-12 flex items-center justify-center bg-gradient-to-b from-gray-800 to-gray-900 border border-gray-700 rounded-lg shadow-lg text-2xl font-bold text-white transform transition-all duration-200 hover:scale-105"
+                        className="w-14 h-14 flex items-center justify-center bg-black/30 border-2 border-retro-blue text-retro-blue font-press-start text-2xl shadow-[0_0_10px_rgba(0,255,255,0.3)] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,255,0.5)]"
                     >
                         {letter}
                     </div>
                 ))}
                 {this.state.isGameOver && (
-                    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                        <div className="text-4xl font-bold text-green-500 animate-bounce">
-                            Word Completed!
+                    <div className="fixed inset-0 bg-black/80 backdrop-blur flex items-center justify-center">
+                        <div className="text-center">
+                            <div className="font-press-start text-4xl text-white animate-neon-glow mb-4">
+                                WORD COMPLETE!
+                            </div>
+                            <div className="font-press-start text-retro-blue text-xl animate-text-flicker">
+                                {this.state.word}
+                            </div>
                         </div>
                     </div>
                 )}

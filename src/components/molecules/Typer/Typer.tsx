@@ -34,16 +34,18 @@ export class Typer extends Component<TyperProps, TyperState> {
 
     render() {
         return (
-            <div className="w-full max-w-2xl">
-                <div className="bg-gradient-to-b from-gray-800 to-gray-900 p-6 rounded-xl shadow-lg border border-gray-700">
-                    <div className="text-center mb-4">
-                        <div className="text-lg font-semibold text-gray-400 mb-2">Last Key Pressed</div>
-                        <div className="text-3xl font-bold text-white bg-gradient-to-r from-blue-500 to-blue-600 inline-block px-4 py-2 rounded-lg transform transition-all duration-200 hover:scale-105">
-                            {this.props.typedText || '_'}
+            <div className="w-full">
+                <div className="bg-black/30 p-6 rounded-lg border border-retro-pink/50 shadow-[0_0_20px_rgba(255,0,255,0.3)]">
+                    <div className="text-center space-y-4">
+                        <div className="font-press-start text-sm text-retro-pink">LAST KEY PRESSED</div>
+                        <div className="inline-block bg-black/50 px-8 py-4 rounded border-2 border-retro-pink shadow-[0_0_15px_rgba(255,0,255,0.2)]">
+                            <span className="font-press-start text-3xl text-white animate-neon-glow">
+                                {this.props.typedText || '_'}
+                            </span>
                         </div>
-                    </div>
-                    <div className="text-sm text-gray-500 text-center">
-                        Type any letter to guess
+                        <div className="font-press-start text-xs text-retro-pink/70 animate-text-flicker">
+                            PRESS ANY KEY TO GUESS
+                        </div>
                     </div>
                 </div>
             </div>
