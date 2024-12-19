@@ -71,7 +71,7 @@ export const GameScreen: React.FC = () => {
                 <div className="bg-black/50 rounded-lg border border-retro-blue/50 shadow-[0_0_20px_rgba(0,255,255,0.3)] backdrop-blur-sm p-8">
                     <div className="flex flex-col items-center space-y-8">
                         <div className="bg-black/50 p-6 rounded-lg border border-retro-pink/30">
-                            <Hangman />
+                            <Hangman wrongLetterCount={wrongGuesses} />
                         </div>
 
                         <div className="w-full max-w-2xl">

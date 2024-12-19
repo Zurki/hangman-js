@@ -34,11 +34,12 @@ npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
 
-The game will be available at `http://localhost:3000`
+The game will be available at `http://localhost:5173`
 
 ## 🛠️ Tech Stack
 
